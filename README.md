@@ -18,7 +18,7 @@
 
 <br>
 
-<img style="width: 100%; height: auto;" src="assets/chatgpt.gif" alt="paypal-overview" /> <br/>
+<img style="width: 100%; height: auto;" src="assets/chatgpt-demo.gif" alt="paypal-overview" /> <br/>
 
 <br/><br/>
 
