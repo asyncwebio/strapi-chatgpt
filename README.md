@@ -14,14 +14,13 @@
 <a href="https://github.com/AsyncWeb/strapi-chatgpt/actions/workflows/eslint.yml/badge.svg">
 <img src="https://github.com/AsyncWeb/strapi-chatgpt/actions/workflows/eslint.yml/badge.svg" alt="EsLint" />
 </a>
-</p>
-
 <br>
-
 <img style="width: 100%; height: auto;" src="assets/chatgpt-demo.gif" alt="paypal-overview" /> <br/>
 
 <br/><br/>
 
+</p>
+<br>
 <!-- # ChatGPT plugin for Strapi -->
 <br/>
 
