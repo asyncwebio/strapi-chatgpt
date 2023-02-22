@@ -14,7 +14,9 @@
 <a href="https://github.com/AsyncWeb/strapi-chatgpt/actions/workflows/eslint.yml/badge.svg">
 <img src="https://github.com/AsyncWeb/strapi-chatgpt/actions/workflows/eslint.yml/badge.svg" alt="EsLint" />
 </a>
-<br>
+<br />
+<br />
+<br />
 <img style="width: 100%; height: auto;" src="assets/chatgpt.gif" alt="chatgpt-overview" /> <br/>
 
 <br/><br/>
