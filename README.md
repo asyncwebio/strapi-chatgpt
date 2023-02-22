@@ -4,20 +4,23 @@
 <h1 align="center">ChatGPT Strapi Plugin</h1>
 <p align="center">The ChatGPT Strapi Plugin is a plugin for the Strapi CMS that allows you to integrate the ChatGPT language model into your Strapi application.</p>
 
-<!-- <p align="center">
- <a href="https://www.npmjs.com/package/strapi-chatgpt">
+<p align="center">
+ <!-- <a href="https://www.npmjs.com/package/strapi-chatgpt">
 <img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/AsyncWeb/strapi-chatgpt?label=npm&logo=npm">
-</a>
-<a href="https://www.npmjs.org/package/strapi-chatgpt">
-<img src="https://img.shields.io/npm/dm/strapi-chatgpt.svg" alt="Monthly download on NPM" />
-</a>
-<a href="https://github.com/AsyncWeb/strapi-chatgpt/actions/workflows/ci.yml/badge.svg">
-<img src="https://github.com/AsyncWeb/strapi-chatgpt/actions/workflows/ci.yml/badge.svg" alt="CI Status" />
+</a> -->
+<!-- <a href="https://www.npmjs.org/package/strapi-chatgpt">
+<img src="https://img.shields.io/npm/dm/strapi-chatgpt.svg" alt="Monthly download on NPM" /> -->
 </a>
 <a href="https://github.com/AsyncWeb/strapi-chatgpt/actions/workflows/eslint.yml/badge.svg">
 <img src="https://github.com/AsyncWeb/strapi-chatgpt/actions/workflows/eslint.yml/badge.svg" alt="EsLint" />
 </a>
-</p> -->
+</p>
+
+<br>
+
+<img style="width: 100%; height: auto;" src="assets/chatgpt.gif" alt="paypal-overview" /> <br/>
+
+<br/><br/>
 
 <!-- # ChatGPT plugin for Strapi -->
 <br/>
