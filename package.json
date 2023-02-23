@@ -1,0 +1,88 @@
+{
+  "name": "strapi-chatgpt",
+  "version": "1.0.0",
+  "description": "The ChatGPT Strapi Plugin is a plugin for the Strapi CMS that allows you to integrate the ChatGPT language model into your Strapi application.",
+  "scripts": {
+    "format": "npm-run-all -p format:*",
+    "format:code": "npm run prettier:code -- --write",
+    "format:other": "npm run prettier:other -- --write",
+    "lint": "npm-run-all -p lint:code",
+    "lint:code": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "lint:other": "npm run prettier:other -- --check",
+    "prettier:code": "prettier \"**/*.js\"",
+    "prettier:other": "prettier \"**/*.{md,css,scss,yaml,yml}\""
+  },
+  "strapi": {
+    "name": "strapi-chatgpt",
+    "description": "The ChatGPT Strapi Plugin is a plugin for the Strapi CMS that allows you to integrate the ChatGPT language model into your Strapi application.",
+    "kind": "plugin",
+    "displayName": "ChatGPT"
+  },
+  "dependencies": {
+    "axios": "^1.3.3",
+    "openai": "^3.1.0",
+    "react-syntax-highlighter": "^15.5.0"
+  },
+  "author": {
+    "name": "AsyncWeb Technology",
+    "email": "support@asyncweb.io",
+    "url": "https://higheredlab.com/"
+  },
+  "homepage": "https://github.com/AsyncWeb/strapi-chatgpt#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AsyncWeb/strapi-chatgpt.git"
+  },
+  "maintainers": [
+    {
+      "name": "AsyncWeb Technology",
+      "email": "support@asyncweb.io",
+      "url": "https://higheredlab.com/"
+    }
+  ],
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/preset-react": "^7.18.6",
+    "eslint": "^8.16.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsdoc": "^40.0.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "3.0.0",
+    "lint-staged": "10.5.4",
+    "npm-run-all": "^4.1.5"
+  },
+  "keywords": [
+    "strapi",
+    "strapi-plugin",
+    "strapi-chatgpt",
+    "openai",
+    "openai-api",
+    "chatgpt",
+    "chatbot",
+    "gpt",
+    "gpt-3",
+    "gpt3",
+    "open-source",
+    "machine-learning",
+    "machine learning",
+    "ml",
+    "ai",
+    "artificial-intelligence",
+    "conversation",
+    "chat",
+    "bot"
+  ]
+}
