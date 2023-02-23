@@ -36,11 +36,10 @@
 
 With this plugin, you can add ChatGPT-powered chatbots and other natural language processing functionality to your Strapi application with ease. The plugin provides a simple interface for configuring and deploying your ChatGPT models, as well as tools
 
-Setting up the plugin is super easy and can be completed within 10 minutes.
+Setting up the plugin is super easy and can be completed within 2 minutes.
 
 1. Enter your OpenAI API credentials.
-1. Select the model you want to use.
-1. Optionally, you can configure the model's parameters.
+1. Optionally, select the model you want to use.
 
 Thats it! You can now use ChatGPT in your Strapi application.
 
