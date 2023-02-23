@@ -1,0 +1,16 @@
+.github
+
+cypress
+
+copy.sh
+
+cypress.json
+README.md
+Dockerfile
+static
+.eslintignore
+.eslintrc.back.js
+.eslintrc.front.js
+.eslintrc.js
+.prettierignore
+.prettierrc.js

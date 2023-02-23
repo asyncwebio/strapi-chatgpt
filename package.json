@@ -1,7 +1,7 @@
 {
   "name": "strapi-chatgpt",
-  "version": "1.0.0",
-  "description": "The ChatGPT Strapi Plugin is a plugin for the Strapi CMS that allows you to integrate the ChatGPT language model into your Strapi application.",
+  "version": "1.0.1",
+  "description": "Integrate ChatGPT into your Strapi application. You get both a UI to interact with ChatGPT and an API end-points to integrate into your applications.",
   "scripts": {
     "format": "npm-run-all -p format:*",
     "format:code": "npm run prettier:code -- --write",
@@ -15,7 +15,7 @@
   },
   "strapi": {
     "name": "strapi-chatgpt",
-    "description": "The ChatGPT Strapi Plugin is a plugin for the Strapi CMS that allows you to integrate the ChatGPT language model into your Strapi application.",
+    "description": "Integrate ChatGPT into your Strapi application. You get both a UI to interact with ChatGPT and an API end-points to integrate into your applications.",
     "kind": "plugin",
     "displayName": "ChatGPT"
   },

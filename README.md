@@ -1,15 +1,15 @@
 <div align="center">
-   <img alt="bigbluebutton" width="60" src="https://higheredlab.com/wp-content/uploads/hel_icon.png" />
+<img alt="stripe payment title" width="60" src="https://higheredlab.com/wp-content/uploads/chatgpt-96.png">
 </div>
-<h1 align="center">ChatGPT Strapi Plugin</h1>
+<h1 align="center">Strapi ChatGPT</h1>
 <p align="center">Integrate ChatGPT into your Strapi application. You get both a UI to interact with ChatGPT and an API end-points to integrate into your applications.</p>
 
 <p align="center">
- <!-- <a href="https://www.npmjs.com/package/strapi-chatgpt">
+ <a href="https://www.npmjs.com/package/strapi-chatgpt">
 <img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/AsyncWeb/strapi-chatgpt?label=npm&logo=npm">
-</a> -->
-<!-- <a href="https://www.npmjs.org/package/strapi-chatgpt">
-<img src="https://img.shields.io/npm/dm/strapi-chatgpt.svg" alt="Monthly download on NPM" /> -->
+</a>
+<a href="https://www.npmjs.org/package/strapi-chatgpt">
+<img src="https://img.shields.io/npm/dm/strapi-chatgpt.svg" alt="Monthly download on NPM" />
 </a>
 <a href="https://github.com/AsyncWeb/strapi-chatgpt/actions/workflows/eslint.yml/badge.svg">
 <img src="https://github.com/AsyncWeb/strapi-chatgpt/actions/workflows/eslint.yml/badge.svg" alt="EsLint" />
@@ -17,7 +17,7 @@
 <br />
 <br />
 <br />
-<img style="width: 100%; height: auto;" src="assets/chatgpt.gif" alt="chatgpt-overview" /> <br/>
+<img style="width: 100%; height: auto;" src="https://higheredlab.com/wp-content/uploads/chatgpt.gif" alt="chatgpt-overview" /> <br/>
 
 <br/><br/>
 
@@ -54,7 +54,7 @@ Thats it! You can now use ChatGPT in your Strapi application.
 1. [Node.js](https://nodejs.org/en/) version 14 or higher.
 1. [Strapi](https://strapi.io/) version v4.x or higher.
 
-> The CgatGPT plugin is designed for **Strapi v4.x**. It won't work with Strapi v3.x.
+> The ChatGPT plugin is designed for **Strapi v4.x**. It won't work with Strapi v3.x.
 
 <br/><br/>
 
