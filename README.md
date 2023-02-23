@@ -2,7 +2,7 @@
    <img alt="bigbluebutton" width="60" src="https://higheredlab.com/wp-content/uploads/hel_icon.png" />
 </div>
 <h1 align="center">ChatGPT Strapi Plugin</h1>
-<p align="center">The ChatGPT Strapi Plugin allows you to integrate the ChatGPT language model into your Strapi application. You get a UI to interact with ChatGPT as well as API end-points to integrate into your Strapi applications.</p>
+<p align="center">Integrate ChatGPT into your Strapi application. You get both a UI to interact with ChatGPT and an API end-points to integrate into your applications.</p>
 
 <p align="center">
  <!-- <a href="https://www.npmjs.com/package/strapi-chatgpt">
