@@ -1,7 +1,6 @@
 "use strict";
 
 module.exports = {
-  type: "content-api",
   routes: [
     {
       method: "POST",
@@ -10,6 +9,14 @@ module.exports = {
       config: {
         policies: [],
       },
+    },
+    {
+      method: "POST",
+      path: "/generateImage",
+      handler: "chatGptController.createImage",
+      config: {
+        policies: [],
+      }
     },
   ],
 };

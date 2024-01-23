@@ -72,7 +72,7 @@ const Integration = ({ isOpen, onClose }) => {
                                 --header 'Content-Type: application/json' \\
                                 --header 'Authorization: Bearer YOUR_STRAPI_AUTH_TOKEN' \\
                                 --data-raw '{"prompt": "Test prompt?",
-                                                        "model": "text-davinci-003",
+                                                        "model": "gpt-3.5-turbo",
                                                         "max_tokens": 100,
                                                         "temperature": 0.7,
                                                         "top_p": 1,

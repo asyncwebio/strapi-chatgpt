@@ -3,14 +3,6 @@
 module.exports = {
   routes: [
     {
-      method: "POST",
-      path: "/prompt",
-      handler: "chatGptController.prompt",
-      config: {
-        policies: [],
-      },
-    },
-    {
       method: "GET",
       path: "/config",
       handler: "chatGptController.getConfig",

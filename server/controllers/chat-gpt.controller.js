@@ -24,4 +24,12 @@ module.exports = ({ strapi }) => ({
       .updateConfig(ctx);
     ctx.send(config);
   },
+
+  async createImage(ctx) {
+    const config = await strapi
+    .plugin("strapi-chatgpt")
+    .service("chatGptService")
+    .getImageResponsefromChatGpt(ctx);
+    ctx.send(config);
+  },
 });

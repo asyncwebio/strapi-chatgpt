@@ -6,6 +6,8 @@ import { auth } from "@strapi/helper-plugin";
 import {
   Button,
   TextInput,
+  SingleSelect,
+  SingleSelectOption,
   Layout,
   HeaderLayout,
   ContentLayout,
@@ -22,18 +24,26 @@ import {
   Stack,
   Divider,
 } from "@strapi/design-system";
-import { PaperPlane, Command, Trash, Cog } from "@strapi/icons";
+import { PaperPlane, Command, Trash, Cog, Picture } from "@strapi/icons";
 import Response from "../Response";
 import Help from "../Help";
 import LoadingOverlay from "../Loading";
 import ClearChatGPTResponse from "../ClearChatGPTResponse";
 import Integration from "../Integration";
 
+const imageFormats = [
+  "Pick an image format",
+  "1024x1024",
+  "1024x1792",
+  "1792x1024",
+]
+
 const Home = () => {
   const { formatMessage } = useIntl();
   const [content, setContent] = useState("");
   const [error, setError] = useState("");
   const [responses, setResponses] = useState([]);
+  const [format, setFormat] = useState(imageFormats[0])
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef(null);
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -47,7 +57,7 @@ const Home = () => {
   const instance = axios.create({
     baseURL: process.env.STRAPI_ADMIN_BACKEND_URL,
     headers: {
-      Authorization: `Bearer ${auth.getToken()}`,
+      Authorization: `Bearer ${auth.get("jwtToken")}`,
       "Content-Type": "application/json",
     },
   });
@@ -62,6 +72,10 @@ const Home = () => {
     setContent(e.target.value);
   };
 
+  const handleImageSizeChange = (e) => {
+    setFormat(e)
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(false);
@@ -69,13 +83,31 @@ const Home = () => {
       setError("Prompt is required");
       return;
     }
-    setLoading(true);
-    const { data } = await instance.post("/strapi-chatgpt/prompt", {
-      prompt: content,
-    });
-    if (data.error || !data.response) {
+
+    let response;
+
+    if (e.target.name === "picture") {
+      if (format === imageFormats[0]) {
+        setError("Image size is required")
+        return;
+      }
+      setLoading(true);
+      const { data } = await instance.post("/strapi-chatgpt/generateImage", {
+        prompt: content,
+        size: format,
+      });
+      response = data;
+    } else {
+      setLoading(true);
+      const { data } = await instance.post("/strapi-chatgpt/prompt", {
+        prompt: content,
+      });
+      response = data
+    }
+
+    if (response.error || !response.response) {
       setLoading(false);
-      setError(data.error);
+      setError(response.error);
       return;
     }
 
@@ -83,9 +115,10 @@ const Home = () => {
       ...responses,
       {
         you: content,
-        bot: data.response,
+        bot: response.response,
       },
     ]);
+
     setLoading(false);
     setContent("");
   };
@@ -124,8 +157,15 @@ const Home = () => {
               >
                 API Integration
               </Button>
+              <SingleSelect onChange={handleImageSizeChange} value={format}>
+                {imageFormats.map((format, idx) => (
+                  <SingleSelectOption key={idx} value={format}>
+                    {format}
+                  </SingleSelectOption>
+                ))}
+              </SingleSelect>
             </Stack>
-          }
+            }
           endActions={
             <Tooltip description="Clear chatGPT history" position="left">
               <IconButton
@@ -178,8 +218,8 @@ const Home = () => {
           </Card>
 
           <Box>
-            <form onSubmit={handleSubmit}>
-              <Grid gap={2} paddingTop={4}>
+            <form>
+              <Grid spacing={2} gap={2} paddingTop={4}>
                 <GridItem col={10}>
                   <TextInput
                     id="chatInput"
@@ -196,15 +236,26 @@ const Home = () => {
                     }}
                   />
                 </GridItem>
-                <GridItem col={2}>
+                <GridItem style={{width: 80}}>
                   <Button
-                    fullWidth
                     size="L"
+                    name="prompt"
                     startIcon={<PaperPlane />}
-                    type="submit"
+                    value="prompt"
                     loading={loading}
+                    onClick={handleSubmit}
                   >
-                    Send
+                    Text
+                  </Button>
+                </GridItem>
+                <GridItem style={{float: screenLeft}}>
+                  <Button
+                    size={"L"}
+                    name="picture"
+                    value="picture"
+                    onClick={handleSubmit}
+                    startIcon={<Picture />}>
+                    Image
                   </Button>
                 </GridItem>
               </Grid>

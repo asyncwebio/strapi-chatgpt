@@ -1,15 +1,12 @@
 "use strict";
-const { Configuration, OpenAIApi } = require("openai");
+const { OpenAI } = require("openai");
 
 module.exports = ({ strapi }) => ({
   async getResponsefromChatGpt(ctx) {
     const config = await this.getConfig();
-
-    const configuration = new Configuration({
+    const openai = new OpenAI({
       apiKey: config.apiKey,
     });
-
-    const openai = new OpenAIApi(configuration);
 
     const {
       prompt,
@@ -29,8 +26,8 @@ module.exports = ({ strapi }) => ({
       };
 
       // Add optional parameters from request body if present
-      const { data } = await openai.createCompletion({
-        ...requestParams,
+      const data = await openai.chat.completions.create({
+        messages: [{role: 'user', content: requestParams.prompt}],
         temperature,
         model: model ? model : requestParams.model,
         max_tokens: max_tokens
@@ -41,7 +38,48 @@ module.exports = ({ strapi }) => ({
         presence_penalty,
         stop,
       });
-      return { response: data.choices[0].text.trim() };
+      return { response: data.choices[0].message.content.trim() };
+    } catch (error) {
+      if (error.response) {
+        strapi.log.error(error.response.data.error.message);
+        return { error: error.response.data.error.message };
+      }
+      strapi.log.error(error.message);
+      return {
+        error:
+          "An error occurred while fetching the chat response. Please try after some time",
+      };
+    }
+  },
+
+  async getImageResponsefromChatGpt(ctx) {
+    const config = await this.getConfig();
+
+    const openai = new OpenAI({
+      apiKey: config.apiKey,
+    });
+
+    const {
+      prompt,
+      aiImageModelName,
+      size,
+      quality,
+    } = ctx.request.body;
+    try {
+      const requestParams = {
+        aiImageModelName: config.aiImageModelName,
+        size: size,
+        quality: quality,
+        prompt: prompt,
+      };
+
+      // Add optional parameters from request body if present
+      const data = await openai.images.generate({
+        prompt: requestParams.prompt,
+        model: aiImageModelName ? aiImageModelName : requestParams.aiImageModelName,
+        size: size,
+      });
+      return { response: data.data[0].url };
     } catch (error) {
       if (error.response) {
         strapi.log.error(error.response.data.error.message);
@@ -78,7 +116,8 @@ module.exports = ({ strapi }) => ({
       const reqBody = ctx.request.body;
       const data = {
         apiKey: reqBody.apiKey,
-        modelName: reqBody.modelName || "text-davinci-003",
+        modelName: reqBody.modelName || "gpt-3.5-turbo",
+        aiImageModelName: reqBody.aiImageModelName || "dall-e-3",
         temperature: reqBody.temperature || 0.0,
         maxTokens: reqBody.maxTokens || 2048,
         topP: reqBody.topP,
@@ -104,4 +143,5 @@ module.exports = ({ strapi }) => ({
       };
     }
   },
+
 });
