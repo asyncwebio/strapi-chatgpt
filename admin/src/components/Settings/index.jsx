@@ -253,7 +253,7 @@ const Settings = () => {
                 </SingleSelect>
               </GridItem>
             </Grid>
-            <Grid>
+            <Grid paddingTop={3}>
               <GridItem col={1}>
                   <SingleSelect
                     name="aiImageModelName"
@@ -272,7 +272,7 @@ const Settings = () => {
                   </SingleSelect>
               </GridItem>
             </Grid>
-            <Box paddingTop={5}>
+            <Box paddingTop={3}>
               <Typography>
                 You can set additional parameters{" ("}
                 <span>
