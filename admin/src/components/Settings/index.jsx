@@ -23,12 +23,16 @@ import { Check, ExternalLinkIcon } from "@strapi/icons";
 
 const AiModels = [
   {
-    value: "text-davinci-003",
-    label: "higher quality, longer output, better instruction following",
+    value: "gpt-3.5-turbo-instruct",
+    label: "similar capabilities as GPT-3 era models, compatible with legacy completions",
   },
   {
-    value: "text-curie-001",
-    label: "faster and lower cost, suited for Q&A, translation, service bot",
+    value: "gpt-3.5-turbo",
+    label: "optimized for chat completions, 4k tokens context window",
+  },
+  {
+    value: "gpt-4",
+    label: "most expensive, greater accuracy, 8k tokens context window",
   },
 ];
 const Settings = () => {
@@ -36,7 +40,7 @@ const Settings = () => {
   const toggleNotification = useNotification();
   const [loading, setLoading] = useState(false);
   const apiKeyRef = useRef("");
-  const modelNameRef = useRef("text-davinci-003");
+  const modelNameRef = useRef("gpt-3.5-turbo-instruct");
   const maxTokensRef = useRef(2048);
 
   const instance = axios.create({
@@ -49,7 +53,7 @@ const Settings = () => {
 
   const [chatGPTConfig, setChatGPTConfig] = useState({
     apiKey: "",
-    modelName: "text-davinci-003",
+    modelName: "gpt-3.5-turbo-instruct",
     maxTokens: 2048,
   });
 
